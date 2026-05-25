@@ -1,93 +1,119 @@
-# Concesionario Frontend
+# 🚗 Concesionario Frontend — Vehicle Management Dashboard
 
-Aplicación web desarrollada con React + Vite para la gestión de vehículos de un concesionario.
+React dashboard for vehicle fleet management, built as a technical assessment for AB Comercial SAS (Motion/GPS Control), a Colombian fleet monitoring company.
 
-##  Demo
+**Live App:** [josedevoc.github.io/concesionario-frontend](https://josedevoc.github.io/concesionario-frontend) &nbsp;|&nbsp; **Backend:** [concesionario-backend repo](https://github.com/Josedevoc/concesionario-backend)
 
-[https://josedevoc.github.io/concesionario-frontend-Prueba-Tecnica-/](https://josedevoc.github.io/concesionario-frontend-Prueba-Tecnica-/)
+> ⚠️ The backend runs on Render free tier — may take ~30s to wake up. Visit [this link](https://concesionario-backend-fastapi.onrender.com/) first to activate it before using the app.
 
-> ⚠️ El backend está en Render (plan gratuito) y puede tardar ~30 segundos en despertar. Actívalo antes de usar la app:
-> [https://concesionario-backend-fastapi.onrender.com/](https://concesionario-backend-fastapi.onrender.com/)
+---
 
-## Tecnologías
+## 🛠️ Tech Stack
 
-- React 19
-- Vite
-- React Router DOM (HashRouter para GitHub Pages)
-- Framer Motion
-- Axios
-- JWT (autenticación)
+| Layer | Technology |
+|---|---|
+| Framework | React 19 + Vite |
+| Routing | React Router DOM (HashRouter for GitHub Pages) |
+| Animations | Framer Motion |
+| HTTP Client | Axios + JWT interceptor |
+| Styling | CSS Modules + Montserrat font |
+| Deploy | GitHub Pages |
 
-##  Funcionalidades
+---
 
-- **Home** con animaciones, media luna y navegación al login
-- **Login / Registro** con autenticación JWT
-- **Dashboard protegido** con CRUD completo de vehículos
-- **Animaciones** typewriter al editar/eliminar y partículas al crear
-- **Iconos rosados** al activar el formulario con el botón `+`
-- **Diseño responsive** basado en Figma con fuente Montserrat y colores corporativos
+## ✨ Features
 
-## Instalación
+- **Animated Home** — curved line, half-moon shape, and smooth entrance animations
+- **JWT Auth** — login and register with token-based protected routes
+- **Vehicle Dashboard** — full CRUD with animated table (Framer Motion)
+- **Form animations** — typewriter effect on edit/delete, particle effect on create
+- **Pink icons** activate when the `+` form button is clicked
+- **Responsive design** based on Figma mockup with corporate color palette
+- Deployed via `gh-pages` — no server required
+
+---
+
+## 🎨 Design
+
+| Token | Value |
+|-------|-------|
+| Blue1 | `#00249C` |
+| Blue2 | `#40CEE4` |
+| Grey1 | `#C5C5C5` |
+| Red1 (accent) | `#C6007E` |
+| Font | Montserrat |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/                     # Icons and images (normal + pink variants)
+├── components/
+│   ├── CurvedLine.jsx           # Home animated SVG line
+│   ├── VehicleForm.jsx          # CRUD form with animations
+│   └── VehicleTable.jsx         # Table with Framer Motion
+├── pages/
+│   ├── Home.jsx                 # Landing with animations
+│   ├── Login.jsx                # Login + register with JWT
+│   └── Dashboard.jsx            # Protected vehicle dashboard
+├── services/
+│   └── api.js                   # Axios instance + JWT interceptor
+├── styles/
+│   ├── variables.css            # Design tokens
+│   ├── Dashboard.css
+│   ├── Home.css
+│   └── Login.css
+├── App.jsx                      # Routes + PrivateRoute guard
+└── main.jsx
+```
+
+---
+
+## 🚀 Local Setup
+
 ```bash
-git clone https://github.com/Josedevoc/concesionario-frontend-Prueba-Tecnica-
-cd concesionario-frontend-Prueba-Tecnica-
+# 1. Clone the repo
+git clone https://github.com/Josedevoc/concesionario-frontend
+cd concesionario-frontend
+
+# 2. Install dependencies
 npm install
+
+# 3. Configure environment variables
+# Create .env in root:
+VITE_API_URL=https://concesionario-backend-fastapi.onrender.com
+
+# 4. Run dev server
 npm run dev
 ```
 
-##  Variables de entorno
+App available at `http://localhost:5173`
 
-Crea un archivo `.env` en la raíz:
-```
-VITE_API_URL=https://concesionario-backend-fastapi.onrender.com
-```
+---
 
-##  Despliegue en GitHub Pages
+## 🌐 Deploy (GitHub Pages)
+
 ```bash
 npm run deploy
 ```
 
-##  Estructura
-```
-src/
-├── assets/
-│   ├── Frame.png           # Logo motion footer
-│   ├── Persona.png
-│   ├── Persona_rosada.png
-│   ├── Ubicacion.png
-│   ├── Ubicacion_rosado.png
-│   ├── Vector.svg          # Logo principal
-│   ├── Vehiculo.png
-│   ├── Vehiculo_rosado.png
-│   ├── editar.png
-│   ├── eliminar.png
-│   └── phone.png
-├── components/
-│   ├── CurvedLine.jsx
-│   ├── VehicleForm.jsx     # Formulario CRUD con animaciones
-│   └── VehicleTable.jsx    # Tabla con animaciones Framer Motion
-├── pages/
-│   ├── Home.jsx            # Página de inicio con animaciones
-│   ├── Login.jsx           # Login y registro con JWT
-│   └── Dashboard.jsx       # Dashboard protegido
-├── services/
-│   └── api.js              # Axios + interceptor JWT
-├── styles/
-│   ├── Dashboard.css
-│   ├── Home.css
-│   ├── Login.css
-│   └── variables.css
-├── App.jsx                 # Rutas con PrivateRoute
-├── main.jsx
-└── index.css
-```
+> After renaming the repo, update `vite.config.js`:
+> ```js
+> base: '/concesionario-frontend/'
+> ```
 
-##  Diseño
+---
 
-Colores corporativos:
-- Blue1: `#00249C`
-- Blue2: `#40CEE4`
-- Grey1: `#C5C5C5`
-- Red1: `#C6007E`
+## 🔗 Related
 
-Fuente: **Montserrat**
+- **Backend repo:** [concesionario-backend](https://github.com/Josedevoc/concesionario-backend)
+- **Backend live:** [concesionario-backend-fastapi.onrender.com](https://concesionario-backend-fastapi.onrender.com)
+
+---
+
+## 👤 Author
+
+**Jose Santiago Jimenez Carranza** — Systems & Computer Engineer  
+[GitHub](https://github.com/Josedevoc) · [LinkedIn](https://linkedin.com/in/tu-perfil)
