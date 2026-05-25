@@ -44,6 +44,14 @@ React dashboard for vehicle fleet management, built as a technical assessment fo
 | Font | Montserrat |
 
 ---
+## 📸 Screenshots
+
+![Home](screenshots/Home.png)
+![Login](screenshots/Login.png)
+![Dashboard](screenshots/Dashboard.png)
+![Confirm Modal](screenshots/Confirm_modal.png)
+
+---
 
 ## 📁 Project Structure
 
